@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .clock {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      border: 2px solid #000;
+      border-radius: 50%;
+    }
+
+    .hand {
+      position: absolute;
+      width: 2px;
+      background-color: #000;
+      height: 50%;
+      top: 50%;
+      left: 50%;
+      transform-origin: 50% 100%;
+      animation: rotateClockwise 60s linear infinite;
+    }
+
+    .minute-hand {
+      width: 1px;
+      height: 45%;
+      background-color: #000;
+      animation: rotateClockwise 3600s linear infinite;
+    }
+
+    @keyframes rotateClockwise {
+      from {
+        transform: translateX(-50%) translateY(-100%) rotate(90deg);
+      }
+      to {
+        transform: translateX(-50%) translateY(-100%) rotate(450deg);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="clock">
+    <div class="hand"></div>
+    <div class="hand minute-hand"></div>
+  </div>
+</body>
+</html>
